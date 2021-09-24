@@ -3,26 +3,20 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro c
-		real n, ex, sal, hex
-
-		escreva ("Digite o código do funcionário: ")
-		leia (c)
-
-		escreva("Digite o número de horas trabalhadas: ")
-		leia(n)
-		
-		se (n > 50){
-		ex = n - 50
-		hex = ex * 20
-		sal = 50 * 10
-		escreva ("Salario Total R$", sal, "\n Excedente R$", hex)
+		real indice
+		escreva("Ímdice de poluição: ")
+		leia (indice)
+		se (indice<= 0.25){
+			escreva("Índice aceitável.")
 		}
-		
+		senao se(indice <= 0.3){
+			escreva("1º GRUPO SUSPENDAM SUAS ATIVIDADES!!!")	
+		}
+		senao se(indice <= 0.4){
+			escreva("1º E 2º GRUPOS SUSPENDAM SUAS ATIVIDADES!!!")	
+		}
 		senao{
-		ex = 0
-		sal = n * 10
-		escreva ("Salario Total R$", sal, "\n Excedente R$", ex)
+			escreva("TODOS OS GRUPOS SUSPENDAM AS SUAS ATIVIDADES!!!")	
 		}
 	}
 }
@@ -31,7 +25,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 118; 
+ * @POSICAO-CURSOR = 218; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
