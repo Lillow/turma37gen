@@ -17,7 +17,7 @@ programa
 		
 		valorTotalfinal= (porcentagemDodistribuidor+porcentagemDoimposto+valorDocarrofabrica)
 
-		escreva("valor total a ser pago pelo carro "+valorTotalfinal)
+		escreva("valor total a ser pago pelo carro "+ valorTotalfinal)
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -25,7 +25,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 66; 
+ * @POSICAO-CURSOR = 638; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
