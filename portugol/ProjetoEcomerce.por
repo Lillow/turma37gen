@@ -29,13 +29,13 @@ programa
 			
 
 		cadeia desejo, codigoProduto, confirmaCompra = " "
-		logico loop = verdadeiro
+		logico repete = verdadeiro
 		inteiro opcaoPagamento = 0
 		real quantidadeCompra = 0.0, totalCompra = 0.0, valorCompra = 0.0, imposto = 0.0, valor10Porcento = 0.0, aumento15Porcento=0.0
 
 		lojaSlogan()
 		
-		enquanto (loop){
+		enquanto (repete){
 
 			escreva ("\nOlá, deseja fazer compras? (S/N): ")
 			leia (desejo)
@@ -98,7 +98,7 @@ programa
 			escreva ("----------------------------------------------------------\n")
 			para (inteiro l=0; l<10; l++){
 				se(loja[l][4]!= "0"){
-					escreva("COD: ",
+					escreva("CODIGO: ",
 					loja[l][0] ,"  PRODUTO: ",
 					loja[l][1] , 
 					"  ", loja[l][2] ,
@@ -113,7 +113,7 @@ programa
 			se(confirmaCompra == "N"){
 				pare
 			}
-			}enquanto(loop)
+			}enquanto(repete)
 			para (inteiro l=0; l<10; l++){
 				valorCompra = tp.cadeia_para_real(loja[l][2]) * tp.cadeia_para_real(loja[l][4])
 				loja[l][3] = tp.real_para_cadeia(tp.cadeia_para_real(loja[l][3]) - tp.cadeia_para_real(loja[l][4]))
@@ -131,7 +131,7 @@ programa
 			escreva("-----------------------------------------------------------------------------\n")
 			escreva("escolha uma das opção de pagamento: 1- A Vista; 2 - Cartão; 3 - Três vezes no cartão \n")
 				leia(opcaoPagamento)
-			enquanto(loop){
+			enquanto(repete){
 				se(opcaoPagamento == 1 ou opcaoPagamento == 2 ou opcaoPagamento == 3){
 					pare
 				}senao{
@@ -143,8 +143,8 @@ programa
 			escreva("-----------------------------------------------------------\n")
 			escreva("========================NOTA FISCAL========================\n")
 			escreva("-----------------------------------------------------------\n")
-			escreva("VALOR DA COMPRA S/IMPOSTO: ",totalCompra,"\n")
-			escreva("VALOR DA COMPRA C/IMPOSTO: ",(totalCompra+imposto),"\n")
+			escreva("VALOR DA COMPRA SEM IMPOSTO: ",totalCompra,"\n")
+			escreva("VALOR DA COMPRA COM IMPOSTO: ",(totalCompra+imposto),"\n")
 			escreva("ITENS DA COMPRA: \n")
 			para (inteiro l=0; l<10; l++){
 				se(loja[l][4]!= "0"){
@@ -181,7 +181,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 981; 
+ * @POSICAO-CURSOR = 4473; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

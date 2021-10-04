@@ -21,6 +21,7 @@ public class Exercicio4
 			numero = (float) Math.pow(numero, 2);
 			System.out.printf("%.2f", numero);
 		}
+		
 	}
 
 }
