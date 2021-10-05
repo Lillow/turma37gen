@@ -1,11 +1,13 @@
-package Lista2;
+package ListaDeExercicios2;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Exercicio4 
 {
 	public static void main(String[] args) 
 	{
+		Locale.setDefault(new Locale("en", "US"));
 		Scanner leia = new Scanner(System.in);
 		float numero = 0.0f;
 		

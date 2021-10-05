@@ -1,4 +1,4 @@
-package Lista1;
+package ListaDeExercicios1;
 import java.util.Scanner;
 
 public class Lista1exercicio8 
