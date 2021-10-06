@@ -1,44 +1,58 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class DesafioAuxilio 
 {
-	public static void main(String[] args)
-	{
+public static void main(String[] args) {
+		
+		//VARIAVEIS
+		Locale.setDefault(Locale.US);
 		Scanner leia = new Scanner(System.in);
-		String nome = " ";
-		final float AUXILIO = 600.00f;
-		final float VALORFILHO = 50.00f;
-		float total = 0.00f;
-		char escolha = ' ';
-		char pronome = ' ';
-		int filhos = 0;
+		
+		String nome;
+		char pronome;
+		boolean chefaFamilia=false;
+		boolean naoOutroAuxilio=true;
+		final double AUXILIO=600.00;
+		final double VALORFILHO=50.00;
+		char op;
+		int filhos=0;
 		
 		
-		System.out.print("Digite o seu nome: ");
-		nome  = leia.next();
-		System.out.print("Você recebe algum tipo de ajuda financeira do governo?[S/N] ");
-		escolha = leia.next().toUpperCase().charAt(0);
-		if (escolha == 'S')
-		{
-			System.out.println("Você não pode receber outro auxílio!");
+		//ENTRADAS
+		
+		System.out.print("Digite o nome da pessoa : ");
+		nome = leia.nextLine();
+		
+		System.out.print("Digite o pronome de tratamento A/O/E : ");
+		pronome = leia.next().toLowerCase().charAt(0);
+		System.out.print("Chefa de familia S/N : ");
+		op = leia.next().toUpperCase().charAt(0);
+		if (op=='S') {
+			chefaFamilia = true;
 		}
-		else if (escolha == 'N')
-		{
-			System.out.print("Você é chefa de família?  ");
-			pronome = leia.next().toUpperCase().charAt(0);
-			System.out.print("Qauntos Filhos você possue? ");
-			filhos = leia.nextInt();
-			total = VALORFILHO * filhos + AUXILIO;
-			if (pronome == 'A')
-			{
-					total *= 2;
-				
-			}
+		System.out.print("Ja recebeu outro auxilio ? S/N :");
+		op = leia.next().toUpperCase().charAt(0);
+		if (op=='S') {
+			naoOutroAuxilio=false;
 		}
-		else 
-		{
-			System.out.println("Opção inválida!");
+		System.out.print("Quantidade de filhos : ");
+		filhos = leia.nextInt();
+		
+		System.out.printf("O valor de auxilio é R$ %.2f",(calcAuxilio(chefaFamilia,naoOutroAuxilio)+((naoOutroAuxilio)?(filhos*50):0)));
+			
+
+	}
+	//funcao calcAuxilio()
+	public static double calcAuxilio(boolean chefaFamilia, boolean naoOutroAuxilio ) {
+		
+		double auxilio=0.00;
+		if (chefaFamilia && naoOutroAuxilio) {
+			auxilio = 1200.00;
+		}  else if (naoOutroAuxilio) {
+			auxilio = 600.00;
 		}
-		System.out.printf("Você receberá R$ %.2f", total);
+		
+		return auxilio;
 	}
 }
