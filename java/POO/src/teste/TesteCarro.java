@@ -7,17 +7,25 @@ public class TesteCarro
 
 	public static void main(String[] args) 
 	{
-		Carro  meuCarro = new Carro();
+		Carro carro1 = new Carro("PXE-1301", "Roadster", "Tesla");
+		Carro carro2 = new Carro();
 		
-		meuCarro.cor = "Preto";
-		meuCarro.modelo = "Tesla";
-		meuCarro.velocidadeAtual = 0;
-		meuCarro.velocidadeMaxima = 80;
+
+		carro1.ligarCarro();
+		carro1.setMacha(1);
+		carro1.acelerar();
+		carro1.acelerar();
+		carro1.acelerar();
+		System.out.println(carro1.getMacha());
+		System.out.println(carro1.getVelocidade());
+		carro1.setMacha(2);
+		carro1.acelerar();
+		carro1.acelerar();
+		System.out.println(carro1.getMacha());
+		System.out.println(carro1.getVelocidade());
 		
-		meuCarro.liga();
-		meuCarro.acelera(20);
-		System.out.println(meuCarro.velocidadeAtual);
-		System.out.println(meuCarro.pegaMacha());
+		
+
 		
 	}
 
