@@ -2,7 +2,11 @@ package entities;
 
 public class ContaPoupanca extends Conta{
 	private int diaAniversarioPoupanca;
-
+	
+	public ContaPoupanca(){
+		
+	}
+	
 	public ContaPoupanca(int numero, String cpf, int diaAniversarioPoupanca) {
 		super(numero, cpf);
 		this.diaAniversarioPoupanca = diaAniversarioPoupanca;
@@ -18,9 +22,14 @@ public class ContaPoupanca extends Conta{
 	
 	public void correcao(int dataAtual) {
 		
-		if (dataAtual == this.diaAniversarioPoupanca) {
+		if (dataAtual == this.diaAniversarioPoupanca) 
+		{
 			super.credito(super.getSaldo()*0.005);
-			}
+		
+		}else 
+		{
+			System.out.println("Não houve correção!");
+		}
 	
 	}
 
