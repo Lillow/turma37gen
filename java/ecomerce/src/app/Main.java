@@ -116,7 +116,7 @@ public class Main {
         	System.out.println("\n------------NOTA FISCAL-----------\n");
 
         	System.out.println("Total pago: R$"+valorTotal);
-        	System.out.println("9% de impostos sob o produto: R$ "+imposto);
+        	System.out.println(String.format("9% de impostos sob o produto: R$ %.2f",imposto));
         	System.out.println("\n Obrigado e volte sempre!!!");
         	try {
 				Thread.sleep(2000);
