@@ -19,51 +19,39 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/postagens")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PostagemController {
+
 	@Autowired
-	private PostagemRepository repository;
-	
+	private PostagemRepository repositoty;
+
 	@GetMapping
-	public ResponseEntity<List<Postagem>> GetAll(){
-		
-		return ResponseEntity.ok(repository.findAll());
+	public ResponseEntity<List<Postagem>> GetAll() {
+		return ResponseEntity.ok(repositoty.findAll());
 	}
-	
-	
+
 	@GetMapping("/{id}")
-	public ResponseEntity<Postagem> GetById(@PathVariable long id){
-		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
+	public ResponseEntity<Postagem> GetById(@PathVariable long id) {
+		return repositoty.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
-	
-	
+
 	@GetMapping("/titulo/{titulo}")
-	public ResponseEntity<List<Postagem>>GetByTitulo(@PathVariable String titulo){
-		
-			return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
+	public ResponseEntity<List<Postagem>> GetByTitulo(@PathVariable String titulo) {
+		return ResponseEntity.ok(repositoty.findAllByTituloContainingIgnoreCase(titulo));
 	}
-	
+
 	@PostMapping
-	public ResponseEntity<Postagem> post (@RequestBody Postagem postagem){
-		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(postagem));
+	public ResponseEntity<Postagem> post(@RequestBody Postagem postagem) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(repositoty.save(postagem));
 	}
-	
+
 	@PutMapping
-	public ResponseEntity<Postagem> put (@RequestBody Postagem postagem){
-		return ResponseEntity.status(HttpStatus.OK).body(repository.save(postagem));
+	public ResponseEntity<Postagem> put(@RequestBody Postagem postagem) {
+		return ResponseEntity.status(HttpStatus.OK).body(repositoty.save(postagem));
 	}
-	
+
 	@DeleteMapping("/{id}")
-	
 	public void delete(@PathVariable long id) {
-		repository.deleteById(id);
-		
+		repositoty.deleteById(id);
 	}
-	
-	
-	
-	
-	
-	
-	
 }
